@@ -229,7 +229,7 @@ impl ClientCrypto {
         self.decrypt.decrypt_server_header(data)
     }
 
-    pub(crate) fn new(session_key: [u8; SESSION_KEY_LENGTH as usize]) -> Self {
+    pub fn new(session_key: [u8; SESSION_KEY_LENGTH as usize]) -> Self {
         Self {
             decrypt: ClientDecrypterHalf::new(session_key),
             encrypt: ClientEncrypterHalf::new(session_key),
