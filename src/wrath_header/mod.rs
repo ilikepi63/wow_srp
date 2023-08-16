@@ -348,7 +348,7 @@ impl ServerCrypto {
         ClientHeader { size, opcode }
     }
 
-    pub(crate) fn new(session_key: [u8; SESSION_KEY_LENGTH as usize]) -> Self {
+    pub fn new(session_key: [u8; SESSION_KEY_LENGTH as usize]) -> Self {
         Self {
             decrypt: ServerDecrypterHalf::new(session_key),
             encrypt: ServerEncrypterHalf::new(session_key),
